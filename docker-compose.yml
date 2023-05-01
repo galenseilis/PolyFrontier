@@ -1,0 +1,69 @@
+version: "3.9"  # optional since v1.27.0
+
+services:
+  prediction_worker_1:
+      build: ./workers/prediction_worker/
+      restart: always
+      ports:
+        - 5000:80
+      depends_on:
+        - healthcheck_worker_1
+  batch_worker_1:
+      build: ./workers/batch_worker/
+      restart: always
+      ports:
+        - 5050:80
+      depends_on:
+        - healthcheck_worker_1
+  speed_worker_1:
+        build: ./workers/speed_worker/
+        restart: always
+        ports:
+          - 5070:80
+        depends_on:
+          - healthcheck_worker_1
+  cron_worker_1:
+      build: ./workers/cron_worker/
+      restart: always
+      ports:
+        - 5080:80
+      depends_on:
+        - healthcheck_worker_1
+  healthcheck_worker_1:
+      build: ./workers/healthcheck_worker/
+      restart: always
+      ports:
+        - 5095:80
+      depends_on:
+        - api
+        - mongo
+        - influxdb
+  api:
+      build: ./api/
+      restart: always
+      ports:
+        - 8080:8080
+      depends_on:
+        - mongo
+  mongo:
+      image: mongo
+      restart: always
+      ports:
+        - 27017:27017
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: ps7alsd
+  influxdb:
+      image: influxdb:1.8
+      restart: always
+      ports:
+        - 8086:8086
+  mongo-express:
+      image: mongo-express
+      restart: always
+      ports:
+        - 8081:8081
+      environment:
+        ME_CONFIG_MONGODB_ADMINUSERNAME: root
+        ME_CONFIG_MONGODB_ADMINPASSWORD: example
+        ME_CONFIG_MONGODB_URL: mongodb://root:ps7alsd@mongo:27017/

@@ -1,0 +1,4 @@
+ts,avg_nb_vehicules_in_per_hour,nb_trucks_in,nb_cars_in,avg_waiting_in,avg_nb_vehicules_out_per_hour,nb_trucks_out,nb_cars_out,avg_waiting_out,avg_temperature,pressure,precipitation_MM,windspeed_Kmph
+2022-01-12 12,125,361,2645,14.387994812725916,127,341,2714,16.454234341947767,10.5,1040.0,0.0,17.6
+2022-01-13 12,113,227,2487,20.09693779775468,125,436,2582,18.610391241830097,8.1,1041.0,0.0,1.4
+2022-01-14 12,123,317,2637,19.077093567654074,123,310,2654,20.289015222649457,7.7,1036.0,0.0,4.0

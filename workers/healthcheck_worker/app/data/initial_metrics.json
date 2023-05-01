@@ -1,0 +1,8 @@
+{
+  "counts": {
+    "raw_controls_data": 8783,
+    "raw_meteo_data": 0,
+    "train_data": 8783,
+    "models": 12
+  }
+}

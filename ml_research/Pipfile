@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+pandas = "*"
+matplotlib = "*"
+torch = "*"
+keras = "*"
+tensorflow = "*"
+statsmodels = "*"
+ciw = "==2.2.2"
+jupyter = "*"
+ipympl = "*"
+scikit-learn = "*"
+pydot = "*"
+pystan = "==2.19.1.1"
+optuna = "*"
+tqdm = "==4.62.3"
+neuralprophet = "*"
+prophet = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

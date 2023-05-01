@@ -1,0 +1,9 @@
+pandas~=1.3.4
+requests~=2.26.0
+fastapi~=0.70.1
+pydantic>=1.8.0,<2.0.0
+uvicorn>=0.15.0,<0.16.0
+python-multipart
+ciw
+nest_asyncio
+retrying
