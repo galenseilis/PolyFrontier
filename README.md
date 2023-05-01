@@ -32,11 +32,6 @@ A user story is done when :
 - The user story is integrated on **dev** branch
 - New and old unit tests pass 
 - The full build passes
-- 
-|       Sprint        | #1  | #2  | #3  |
-|        :---:        | :-: | :-: | :-: |
-| Nb points planifiés |  71 |   |     |
-| Nb points délivrés  |  42 |     |     |
 
 ## Contributing 
 The branching structure of the project is as follows : 
