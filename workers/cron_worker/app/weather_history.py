@@ -1,11 +1,10 @@
+import datetime
+import time
+
 import numpy as np
 import pandas as pd
-import time
-import datetime
 
-
-
-def get_weather_history_data_by_hour_and_day(year,month,day, hour):
+def get_weather_history_data_by_hour_and_day(year, month, day, hour):
     date = year+'-'+month+'-'+day + ' ' + hour
 
     weather_history_data = pd.read_csv('dataset_custom_sample_per_hour_v1.csv')
@@ -14,8 +13,7 @@ def get_weather_history_data_by_hour_and_day(year,month,day, hour):
 
     return weather_history_data_by_hour_and_day
 
-
-def weather_history_message(year,month,day,hour):
+def weather_history_message(year, month, day, hour):
     weather_data_by_date = get_weather_history_data_by_hour_and_day(year,month,day,hour)
     message = {
         "ts": str(weather_data_by_date['ts'].values[0]),
@@ -25,4 +23,3 @@ def weather_history_message(year,month,day,hour):
         "windspeed_Kmph": int(weather_data_by_date['windspeed_Kmph'].values[0]),
     }
     return message
-
